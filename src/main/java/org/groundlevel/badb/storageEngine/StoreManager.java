@@ -8,11 +8,11 @@ import java.util.Random;
 
 public class StoreManager {
     BinarySearchTree binarySearchTree = new BinarySearchTree();
-    public void insert(long key, String value) {
+    public void insert(long key, long value) {
         binarySearchTree.insertData(key, value);
     }
 
-    public List<Node> selectAll() {
+    public List<Node<Long>> selectAll() {
         return binarySearchTree.getAllData();
     }
 

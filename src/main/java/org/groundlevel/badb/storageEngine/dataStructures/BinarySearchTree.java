@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.function.BiConsumer;
 
 public class BinarySearchTree {
-    public Node root = null;
+    public Node<Long> root = null;
 
-    public void insertData(long key, String value) {
+    public void insertData(long key, long value) {
         Node node = new Node(key, value);
         if (root == null) {
             root = node;
@@ -15,16 +15,16 @@ public class BinarySearchTree {
         }
         insertNode(root, node);
     }
-    public Node getData(long key) {
+    public Node<Long> getData(long key) {
         return search(root, key);
     }
-    public List<Node> getAllData() {
-        List<Node> nodeList = new ArrayList<>();
+    public List<Node<Long>> getAllData() {
+        List<Node<Long>> nodeList = new ArrayList<>();
         traverse(nodeList, root);
         return nodeList;
     }
 
-    public void traverse(List<Node> nodeList, Node node) {
+    public void traverse(List<Node<Long>> nodeList, Node<Long> node) {
         if (node == null) return;
         nodeList.add(node);
         System.out.println(node.getValue());
@@ -32,9 +32,9 @@ public class BinarySearchTree {
         traverse(nodeList, node.getRight());
     }
 
-   public Node search(Node node, long key) {
+   public Node<Long> search(Node<Long> node, long key) {
         if (node == null) return null;
-        if(node.getKey() == key) return node;
+        if(node.getKey().equals(key)) return node;
         if(key < node.getKey()) {
             return search(node.getLeft(), key);
         } else {
@@ -43,7 +43,7 @@ public class BinarySearchTree {
 
     }
 
-    private void insertNode(Node oldNode, Node newNode) {
+    private void insertNode(Node<Long> oldNode, Node<Long> newNode) {
         if( newNode.getKey() < oldNode.getKey()) {
             if(oldNode.getLeft() == null) {
                 oldNode.setLeft(newNode);

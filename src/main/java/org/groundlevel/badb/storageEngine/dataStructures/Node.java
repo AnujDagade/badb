@@ -1,35 +1,35 @@
 package org.groundlevel.badb.storageEngine.dataStructures;
 
-public class Node {
-    private long key;
-    private String value;
+public class Node <T> {
+    private T key;
+    private long value;
     private Node left;
     private Node right;
 
     public Node() {}
-    public Node(long key, String value) {
+    public Node(T key, long value) {
         this.key = key;
         this.value = value;
     }
-    public Node(long key, String value, Node left, Node right) {
+    public Node(T key, long value, Node left, Node right) {
         this.key = key;
         this.value = value;
         this.left = left;
         this.right = right;
     }
-    public long getKey() {
+    public T getKey() {
         return key;
     }
 
-    public void setKey(long key) {
+    public void setKey(T key) {
         this.key = key;
     }
 
-    public String getValue() {
+    public long getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(long value) {
         this.value = value;
     }
 

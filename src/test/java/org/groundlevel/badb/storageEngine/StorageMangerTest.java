@@ -11,14 +11,14 @@ public class StorageMangerTest {
     @Test
     public void testInsertData() {
         for (int i = 0; i < 100; i++) {
-            storeManager.insert(i, "value"+i);
+            storeManager.insert(i, (long) i);
         }
-        List<Node> nodeList = storeManager.selectAll();
-        for (Node node: nodeList) {
+        List<Node<Long>> nodeList = storeManager.selectAll();
+        for (Node<Long> node: nodeList) {
             System.out.print("node = " + node.getValue() + " ");
         }
         Assertions.assertNotNull(nodeList);
         Assertions.assertEquals(100, nodeList.size());
     }
-
+    
 }
