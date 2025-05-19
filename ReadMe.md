@@ -14,6 +14,7 @@ BadDB aims to provide a hands-on way to understand:
 - **Database Fundamentals**: Indexing, querying, and data persistence
 - **Performance Optimization**: Understanding time and space complexity tradeoffs
 - **Database Internals**: Storage engines, query processing, and transaction management
+- **Linux**: More about linux eg File handling,users, groups, permissions etc.
 
 ## 🧪 Features
 
